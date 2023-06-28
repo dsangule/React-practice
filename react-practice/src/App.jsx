@@ -1,9 +1,12 @@
 import './App.css'
+import MainContent from './MainContent'
+import Header from './Header'
 
 export default function App() {
   return(
     <div>
-      <h1>JWT Authentication with ReactJS</h1>
+      <Header />
+      <MainContent />
       
     </div>
   )
