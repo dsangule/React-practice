@@ -1,39 +1,52 @@
+import { useState } from "react";
+import Todo from "../components/Todo";
+
+let keyVal = 0;
+
 export default function App() {
 
-  // const [inputList, setInputList] = useState("");
-  // const [items, setItems] = usestate([]);
+  const [todo, updateTodo] = useState([])
 
-  // const itemEvent = (event) => {
-  //   setInputList(event.target.value);
-  // };
+  function addTodo(){
+    const todoVal = document.getElementById("todoAdder").value
+    console.log(keyVal);
+    updateTodo(() => {
+      return [...todo, {
+        name: todoVal,
+        key: keyVal
+      }]
+    })
+    keyVal++;
+  }
 
-  // const listOfItems = () => {
-  //   setItems((oldItems) => {
-  //     return [...oldItems, inputList];
-  //   });
-  // };
+  // function toRemove(){
+  //   return key !== 1;
+  // }
+
+  function removeTodo(){
+    // updateTodo(todo.filter(toRemove))
+    console.log(0)
+  }
 
   return(
-    <React.Fragment>
-    <div className="body">
-      <div className="header">
-        <h1>4 Tasks</h1>
-        <h2>4 remain</h2>
-      </div>
+    <>
+      <div className="body">
+        <div className="header">
+          <h1>{keyVal} Tasks</h1>
+          <h2>4 remain</h2>
+        </div>
 
-      <div>
-        <ol>
-          {items.map( (itemVal) => {
-            return (<li>{itemVal}</li>);
+        <div>
+          {todo.map((todoItem) => {
+            return <Todo name={todoItem.name} key={todoItem.key} remove={removeTodo}/>
           })}
-        </ol>
+        </div>
+  
+        <div className="form">
+          <input type="text" placeholder="Add Todo" id="todoAdder"/>
+          <button onClick={addTodo}>Add</button>
+        </div>
       </div>
-{/* 
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Add Todo" onChange={itemEvent}/>
-        <button onClick={listOfItems}>Add</button>
-      </form> */}
-    </div>
-    </React.Fragment>
+    </>
   );
 }

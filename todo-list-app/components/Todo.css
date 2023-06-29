@@ -1,0 +1,9 @@
+.todo--card {
+    display: flex;
+    height: 30px;
+    width: 200px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: darkseagreen;
+    padding: 10px;
+}
