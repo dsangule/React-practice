@@ -1,0 +1,9 @@
+.body {
+  width: 450px;
+  justify-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
