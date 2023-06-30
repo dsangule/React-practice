@@ -1,9 +1,17 @@
 .body {
-  width: 450px;
-  justify-items: center;
+  height: 80vh;
+  width: 400px;
+  padding: 20px;
+  margin: 20px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  color: aliceblue;
+}
+
+.form > Input {
+  width: 340px;
 }
